@@ -1,0 +1,14 @@
+.logo{
+  background: #cb0c13 url(https://media5.orientaldaily.com.my/assets/images/logo-official.png?d075e3a5eda3d0a9e2fabdca6a33dd05)no-repeat 7px 10px;
+	background-size: 80px 23px;
+	width: 125px;
+	height: 46px;
+	
+}
+.nav-container{
+	display:flex;
+}
+.menu-item{
+	width:100%;
+	line-height: 44px;
+}
