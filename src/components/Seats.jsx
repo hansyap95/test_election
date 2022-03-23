@@ -21,7 +21,7 @@ const Seats = () => {
   
   return (
     <div>
-       {countParty("國陣")}
+       {countParty("國")}
        
     </div>
   )
