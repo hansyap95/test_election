@@ -1,3 +1,14 @@
-.home-page{
-  background-color: black;
+.home-page {
+  justify-content: center;
+  text-align: center;
+}
+img {
+  width: 200px;
+  height: auto;
+  border-radius: 2em;
+}
+.article-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }

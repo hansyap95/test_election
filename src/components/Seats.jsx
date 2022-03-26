@@ -15,14 +15,16 @@ const Seats = () => {
   },[data])
 
   const countParty=(party)=>{
-    const count = data.filter((partyBN=>partyBN.alliance==party));
+    const count = data.filter((partyBN=>partyBN.alliance===party));
     return count.length;
   }
   
   return (
     <div>
-       {countParty("國")}
-       
+       {countParty("國盟")}
+       {data.map((data)=>(
+         <div>{data.seat}</div>
+       ))}
     </div>
   )
 }
