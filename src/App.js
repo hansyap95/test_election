@@ -1,6 +1,6 @@
 //import {Layout} from 'antd';
 //const {Footer, Content} =Layout;
-import {Nav,Home,Seats} from './components';
+import {Nav,Home,Seats,Chart} from './components';
 import {Routes,Route} from 'react-router-dom';
 const App = () => {
   return (
@@ -12,6 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/seats" element={<Seats/>}/>
+          <Route path="/chart" element={<Chart/>}/>
         </Routes>
       </div>
       <div className="footer">

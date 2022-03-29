@@ -15,7 +15,7 @@ const Home = () => {
     e.target.src=ErrorImage;
   }
   const fetchData=async()=>{
-      const res=await fetch(API_URL);
+      const res=await fetch(API_URL, {mode:'cors'});
       const data=await res.json();
       setArticle(data);
       console.log(data);
