@@ -6,6 +6,7 @@
   "proxy": "https://www.orientaldaily.com.my/",
   "dependencies": {
     "@ant-design/plots": "^1.0.9",
+    "@chakra-ui/react": "^2.1.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",

@@ -2,14 +2,12 @@ import {Chart} from './';
 import { useState,useEffect } from 'react';
 import './Home.css';
 import { Table } from 'antd';
-const API_URL="https://testelec2022.orientaldaily.com.my/allPartyResult.php";
+const API_URL="https://testelec2022.orientaldaily.com.my/allPartyResult1.php";
 const Seats = () => {
   const [allParty,setAllParty]=useState();
-
   const props = {
     loading: false,
     size: "default",
-    footer: ()=>'Header',
     bordered:false,
     pagination:{ position: ['none'] }
   };
@@ -32,99 +30,59 @@ const Seats = () => {
       key:"win",
     },
   ]
+
+  const expandedRowRender=()=>{
+    // const columns=[
+    //   { 
+    //     title:"党",
+    //     dataIndex:['parties'],
+    //     key:'key ',
+    //     align:'center',
+    //     render:item=>item.map((items)=>items.partys)
+    //   },
+    //   {
+    //     title:"提名",
+    //     dataIndex:'party',
+    //     key:"nums",
+    //   },
+    //   {
+    //     title:"中选",
+    //     dataIndex:'party',
+    //     key:"wins",
+    //   },
+    // ]
+    // return <Table columns={columns} dataSource={allParty} rowKey='key' pagination={false}/>
+    return(
+      <div>
+
+        {allParty.map((item)=><div>{item.parties.map((subitem,key)=><h2>{subitem.partys}</h2>)}</div>)}
+      </div>
+    )
+  }
+
   
-  const data=[
-         {
-          "party":"国阵",
-          "num": 56,
-          "win": 40,
-          "parties":[
-            {
-              "巫統": {
-                "num": 37,
-                "win": 33
-              },
-              "馬華": {
-                "num": 15,
-                "win": 4
-              },
-              "國大黨": {
-                "num": 4,
-                "win": 3
-              }
-            }
-          ]
-        },
-         {
-          "party":"希盟",
-          "num": 50,
-          "win": 12,
-          "parties":[
-            {
-              "巫統": {
-                "num": 37,
-                "win": 33
-              },
-              "馬華": {
-                "num": 15,
-                "win": 4
-              },
-              "國大黨": {
-                "num": 4,
-                "win": 3
-              }
-            }
-          ]
-        },
-        { 
-          "party": "大马民主联合阵线",
-          "num": 7,
-          "win": 1,
-          "parties":[
-            {
-              "巫統": {
-                "num": 37,
-                "win": 33
-              },
-              "馬華": {
-                "num": 15,
-                "win": 4
-              },
-              "國大黨": {
-                "num": 4,
-                "win": 3
-              }
-            }
-          ]
-        } 
-  ]
-  // const fetchData=async()=>{
-  //   const res= await fetch (API_URL);
-  //   const data =await res.json();
-  //   setAllParty(data);
+  const fetchData=async()=>{
+    const res= await fetch (API_URL);
+    const data =await res.json();
+    setAllParty(data);
     
-  // }
-  // useEffect(()=>{
-  //   fetchData();
-  // },[])
+  }
+  useEffect(()=>{
+    fetchData();
+  },[])
   // if (!done) return <Loader/>;
-  //console.log(data.parties.巫統);
-  
+
+
+  //console.log(allParty);
   return (
     <> 
 
-      {data.map((item)=><div><h1>{item.num}</h1>
-      {item.parties.map((subitem)=><h2>{subitem.巫統.num}</h2>)}
-      </div>
-      )}
+      {/* {allParty.map((item)=><div>{item.parties.map((subitem,key)=><h2>{subitem.partys}</h2>)}</div>)} */}
       <div className='chart'>
         <Chart />
       </div>
       <div>
-        {/* <Table {...props} columns={columns}  dataSource={data} 
-          expandable={{expandedRowRender:record=><p>{record.parties.map((part)=>part.num)}</p>,
-          rowExpandable:record=>record.parties
-        }}/> */}
+        <Table {...props} columns={columns}  dataSource={allParty} expandable={{expandedRowRender}}/>
       </div>
       <div>
         <h1>Overall map</h1>
