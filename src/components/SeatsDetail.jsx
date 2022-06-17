@@ -1,31 +1,34 @@
-import {useEffect,useState} from 'react';
+import React,{useEffect,useState,Suspense} from 'react';
 import { Collapse ,Button} from 'antd';
-import {Chart,Loader} from './';
+import {Chart,Loader,TableState} from './';
 import { useParams } from 'react-router-dom';
 import HTMLReactParser from 'html-react-parser';
 import './Home.css';
+
+
 const {Panel}=Collapse;
 const SeatsDetail = () => {
   const {state}=useParams();
   const [seatCode,setSeatCode]=useState('p');
-  const [data,setData]=useState();
+  const [data,setData]=useState([]);
   const [expandAll,setExpandAll]=useState(true);
   const [done,setDone]=useState(undefined);
   const [seat,setSeat]=useState();
-  
-  const fetchData = async()=>{
+
+
+  const fetchData = async(state,seatCode)=>{
     const API_URL=`https://testelec2022.orientaldaily.com.my/seatinfo.php?seat=${state}&code=${seatCode}`;
     const res =await fetch (API_URL);
     const datas =await res.json();
     setData(datas);
     setDone(true);
-    
   }
+  
   useEffect(()=>{
-    fetchData();
-  },[seatCode])
-
-  const expandFunction=()=>{
+    fetchData(state,seatCode)
+  },[state,seatCode])
+  
+  const expandFunctions=()=>{
     setExpandAll(!expandAll);
     if(expandAll===true){
       const arr=[];
@@ -38,7 +41,7 @@ const SeatsDetail = () => {
       setSeat([]);
     }
   }
-  
+
   const convertName = (state) => {
     switch (state) {
       case "johor":
@@ -66,7 +69,7 @@ const SeatsDetail = () => {
         return state;
         
       case "selangor":
-        state = "";
+        state = "雪蘭莪";
         return state;
         
       case "sabah":
@@ -108,6 +111,15 @@ const SeatsDetail = () => {
     setSeat([]);  
     setExpandAll(true);
   }
+  
+  function loadComponent(name){
+    const Component=React.lazy(()=>
+       import (`../map/${name}`)
+    );
+    return Component
+  }
+
+  const Component=loadComponent(state)
 
   if (!done) return <Loader/>;
 
@@ -116,23 +128,31 @@ const SeatsDetail = () => {
       <div className='title_seat'>
          <h1 className='title'>{convertName(state)}</h1>
       </div>
-      <div className='chart'>
-        <Chart />
-      </div>
-      
       <div className='button_expand'>
         <Button type="primary" value="p" danger size='large' onClick={parlimentStateFunction} style={{marginRight:'10px'}}>国会议席</Button>
         <Button type="primary" value="n" danger size='large' onClick={parlimentStateFunction}>州议席</Button>
       </div>
-      <div>
-        <h1 style={{textAlign:'center'}}>Map</h1>
+      <div className='chart'>
+        <Chart />
+      </div>
+      <div className='table_party'>
+        <TableState/>
+      </div>
+      <div className='seat_map'>
+        <h1 >{convertName(state)+"-地图"}</h1>
+        <div className='map'>
+         
+          <Suspense fallback={<div>加载中...</div>}>
+            <Component code={seatCode}/>
+          </Suspense>
+        </div>
       </div>
       <div className='button_expand'>
-        <Button type="primary"  style={{backgroundColor:'grey',borderRadius:'10px',borderColor:'white'}} onClick={expandFunction}>{expandAll ? '显示全部 ' : '隐藏全部'} </Button>
+        <Button type="primary"  style={{backgroundColor:'grey',borderRadius:'10px',borderColor:'white'}} onClick={expandFunctions}>{expandAll ? '显示全部 ' : '隐藏全部'} </Button>
       </div>
       <div className='seat_info'>
           {data.map((cand,index)=>(
-             <Collapse activeKey={seat}  onChange={setSeat} >
+             <Collapse activeKey={seat} onChange={setSeat} key={index}>
                <Panel className='panel_seat' header={cand.seatname +"  "+ cand.ednamec +" "+ cand.edname} key={index} >
                  {HTMLReactParser(cand.electorate+cand.reg_percent+cand.last_result+cand.total_votes+cand.majority+cand.candidate)}
                </Panel>

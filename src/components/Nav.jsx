@@ -13,7 +13,6 @@ const Nav = () => {
         <Menu theme="dark" mode='horizontal' >
           <Menu.Item key="1"><Link to="/">主页</Link></Menu.Item>
           <Menu.Item key="2"><Link to="/seats">议席列表</Link></Menu.Item>
-          
         </Menu>
       </div>
       

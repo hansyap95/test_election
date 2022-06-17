@@ -34,6 +34,7 @@ a{
 }
 .seat_info{
   margin: auto;
+  padding-bottom: 2em;
 }
 .title_seat{
   text-align: center;
@@ -45,6 +46,33 @@ a{
   color:white;
   background-color: grey;
 }
+.tableParty{
+  text-align: center;
+  width: 100%;
+  table-layout:fixed;
+}
+
+.party_rows{
+  background-color: #f2f2f2;
+}
+.td_party{
+  text-align: center;
+  padding: 0.5em;
+  padding-left: 5em;
+  
+}
+.state_party1{
+  padding-bottom:2em;
+}
+.state_party2{
+  margin-bottom:2em;
+}
+.seat_map{
+  text-align:center;
+  margin:3em 0 ;
+  
+}
+
 @media only screen and (max-width: 600px) {
   .news-text{
     display: none !important;
@@ -83,6 +111,9 @@ a{
     width: 60%;
     margin: auto;
   }
+  .state_party2{
+    margin-left:2em;
+  }
 }
 @media only screen and (min-width:1300px){
   .home-page{
@@ -92,6 +123,19 @@ a{
     width: 60%;
     margin: auto;
   }
+  .map{
+    margin: auto;
+    max-width: 40%;
+  }
+  .table_party{
+    max-width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .state_party2{
+    margin-left:2em;
+  }
 }
 @media only screen and (min-width:1800px){
   .home-page{
@@ -100,5 +144,23 @@ a{
   .seat_info{
     width: 50%;
     margin: auto;
+  }
+  .seat_map{
+    text-align:center;
+    margin:3em 0 ;
+    
+  }
+  .map{
+    margin: auto;
+    max-width: 30%;
+  }
+  .table_party{
+    max-width: 40%;
+    display: flex;
+    margin: auto ;
+    justify-content: center;
+  }
+  .state_party2{
+    margin-left:2em;
   }
 }

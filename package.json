@@ -5,6 +5,7 @@
   "homepage": "./",
   "proxy": "https://www.orientaldaily.com.my/",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@ant-design/plots": "^1.0.9",
     "@chakra-ui/react": "^2.1.2",
     "@testing-library/jest-dom": "^5.16.2",
@@ -12,17 +13,20 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.19.2",
     "axios": "^0.26.1",
+    "bootstrap-icons": "^1.8.3",
     "html-react-parser": "^1.4.12",
     "moment": "^2.29.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.4.0",
     "react-iframe": "^1.8.0",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "svg-inline-react": "^3.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

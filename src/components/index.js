@@ -8,3 +8,5 @@ export {default as Ad1} from './Ad1';
 export {default as Ad2} from './Ad2';
 export {default as Ad3} from './Ad3';
 export {default as SeatsDetail} from './SeatsDetail';
+export {default as TableState} from './TableState';
+export {default as StateParty} from './StateParty';
