@@ -46,21 +46,37 @@ a{
   color:white;
   background-color: grey;
 }
+
+
+
+
 .tableParty{
   text-align: center;
   width: 100%;
   table-layout:fixed;
+  
 }
+.ant-table-expanded-row .ant-table-cell{
+  background-color: rgb(254, 204, 46);
 
-.party_rows{
-  background-color: #f2f2f2;
+}
+.party_rows {
+  background-color: rgb(242, 218, 198);
+  opacity: 0.9;
 }
 .td_party{
   text-align: center;
-  padding: 0.5em;
-  padding-left: 5em;
   
+  border-bottom: 1px solid black;
 }
+
+
+
+
+
+
+
+
 .state_party1{
   padding-bottom:2em;
 }

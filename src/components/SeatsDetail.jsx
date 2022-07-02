@@ -141,8 +141,7 @@ const SeatsDetail = () => {
       <div className='seat_map'>
         <h1 >{convertName(state)+"-地图"}</h1>
         <div className='map'>
-         
-          <Suspense fallback={<div>加载中...</div>}>
+          <Suspense fallback={<Loader/>}>
             <Component code={seatCode}/>
           </Suspense>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import InlineSVG from 'svg-inline-react';
 
 const johor = (props) => {
@@ -1327,19 +1327,110 @@ const svgKL=`<svg
      </g>
  </switch>
 </svg>`;
-// const winParty=()=>{
-// 	const col='blue';
-// 	const winBn=document.getElementById("N1");
-// 	const textBN=document.getElementById("txtN1");
-// 	winBn.style.fill=col;
-//     textBN.style.fill='white';
-// }
+
+const getTextColor=(rgba)=>{
+    rgba = rgba.match(/\d+/g);
+    if ((rgba[0] * 0.299) + (rgba[1] * 0.587) + (rgba[2] * 0.114) > 186) {
+        return '#666666';
+    } else {
+        return '#ffffff';
+    }
+}
+
+
+
+const clearData=()=>{
+
+    let addText=document.getElementsByTagName("text");
+    let textLength=addText.length;
+
+    for(let x=0;x<textLength;x++){
+        addText[x].style.fill=black_color;
+    }
+
+    let map = document.querySelectorAll(".map");
+    let map_length = document.querySelectorAll(".map").length;
+    for(let x=0;x<map_length;x++){
+        map[x].style.fill=white_color;
+    }
+
+}
+        const color_bn= 'rgb(0,0,255)';
+		const color_ph= 'rgb(234, 18, 18)';
+		const color_pn='rgb(0,49,82)';
+		const color_pj='rgb(0, 103, 139)';
+		const color_other= 'rgb(128,128,128)';
+		const color_warisan='rgb(164, 229, 252)';
+		const white_color='rgb(255, 255, 255)';
+		const black_color='rgb(0,0,0)';
+
+const callMap=()=>{
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+        let obj = JSON.parse(this.responseText);
+        for (let i = 0; i < obj.length; i++) {
+
+            const state = obj[i].seat;  //n1
+            const win = obj[i].alliance; //bn
+            //console.log($state);
+            //clickMap(state);
+            const map = document.querySelectorAll("#"+state);
+            const maptxt = document.getElementById("txt" + state);
+            
+            
+        for (let x=0;x<map.length;x++){
+            
+            if (win === '國盟') {
+                map[x].style.fill = color_pn;
+                maptxt.style.fill = getTextColor(color_pn);
+                map[x].style.stroke=white_color;
+            }
+            if (win === '希盟') {
+                map[x].style.fill = color_ph;
+                maptxt.style.fill = getTextColor(color_ph);
+                map[x].style.stroke=white_color;
+            }
+            if (win === '國陣') {
+                map[x].style.fill = color_bn;
+                maptxt.style.fill = getTextColor(color_bn);
+                map[x].style.stroke=white_color;
+            }
+            if (win === '斗士黨') {
+                map[x].style.fill = color_pj;
+                maptxt.style.fill = getTextColor(color_pj);
+                map[x].style.stroke=white_color;
+            }
+            if (win === '其他') {
+                map[x].style.fill = color_other;
+                maptxt.style.fill = getTextColor(color_other);
+                map[x].style.stroke=white_color;
+            }
+            if (win === '民興黨') {
+                map[x].style.fill = color_warisan;
+                maptxt.style.fill = getTextColor(color_warisan);
+                map[x].style.stroke=white_color;
+            }
+            if (win === '大馬民主聯合陣線') {
+                map[x].style.fill = black_color;
+                maptxt.style.fill = getTextColor(black_color);
+                map[x].style.stroke=white_color;
+            }
+            }
+            
+        }
+    };
+    xmlhttp.open("GET", "https://testelec2022.orientaldaily.com.my/getInfo.php", true);
+    xmlhttp.send();
+}   
+   setInterval(function() {
+       callMap();
+       clearData();
+   }, 20000);
 
   return (
 	<>
-	{/* <h1>{props.code}</h1> */}
+    {callMap()}
 	<InlineSVG src={props.code=== 'p' ? svgJohor:svgKL}/>
-	{/* {winParty()} */}
 	</>
   )
 }
