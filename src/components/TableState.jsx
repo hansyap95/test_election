@@ -10,9 +10,10 @@ const TableState = () => {
         loading: false,
         tableLayout:'fixed',
         size: "middle",
-        
-        pagination:{ position: ['none'] }
+        pagination:{ position: ['none'] },
       };
+
+
       const columns=[
         {
           
@@ -22,26 +23,28 @@ const TableState = () => {
           render:icon=><img src={icon} alt="icon" style={{width:'25px',height:'25px'}} />
         },
         {
-          title:"联盟",
+          title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>联盟</p>,
           dataIndex:["party"],
           key:'party',
-          width:'40%',
           align:'left',
-          render:text=><h3>{text}</h3>
+          render:text=><p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>{text}</p>
         },
         {
-          title:"提名",
+          title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>提名</p>,
           dataIndex:"num",
           key:"num",
           align:'center',
-          render:num=><h3>{num}</h3>
+          width:'30%',
+          render:text=><p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>{text}</p>
         },
         {
-          title:"中选",
+          title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>中选</p>,
           dataIndex:"win",
           key:"win",
           align:'center',
-          render:num=><h3>{num}</h3>
+          width:'30%',
+          render:text=><p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>{text}</p>
+
         },
       ]
 
@@ -58,19 +61,17 @@ const TableState = () => {
 
   return (
     <div>
-        <Table {...props} columns={columns}  rowKey="key" dataSource={allParty} style={{backgroundColor:'black'}} expandable={{expandedRowRender:(record)=> record.parties.map((subitem,index)=>(
+        <Table {...props}  columns={columns}  rowKey="key" dataSource={allParty} expandable={{expandedRowRender:(record)=> record.parties.map((subitem,index)=>(
           
             <table key={index} className="tableParty" >
               <tbody >
                 <tr  className="party_rows" key={index}>
-                  <td className="td_party " style={{width:'70%',height:'50px',paddingLeft:'7em'}}>
+                  <td className="td_party " style={{width:'40%',height:'50px',textAlign:'left',paddingLeft:'10px'}}>
                     <img src={subitem.icon} alt="icon" style={{width:'25px',height:'25px',marginRight:'10px'}} />{subitem.partys}
-                    <img src="https://testelec2022.orientaldaily.com.my/icon/Arrow_03%20copy.png" alt="logo-direction" style={{width:'24px' ,height:'28px',marginRight:'1em',float:'right'}} />
+                    <img src="https://testelec2022.orientaldaily.com.my/icon/Arrow_03%20copy.png" alt="logo-direction" style={{width:'10px' ,height:'19px',marginRight:'-6px',float:'right',marginTop:'7px'}} />
                   </td>
-                  <td className="td_party">
-                    {!subitem.nums ? 0 : subitem.nums}
-                    </td>
-                  <td className="td_party">{!subitem.wins ? 0: subitem.wins}</td>
+                  <td className="td_party"> {!subitem.nums ? 0 : subitem.nums} </td>
+                  <td className="td_party" style={{paddingLeft:'37px'}}>{!subitem.wins ? 0: subitem.wins}</td>
                 </tr>
               </tbody>
             </table>

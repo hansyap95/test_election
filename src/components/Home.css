@@ -49,31 +49,34 @@ a{
 
 
 
-
-.tableParty{
-  text-align: center;
-  width: 100%;
-  table-layout:fixed;
-  
-}
-.ant-table-expanded-row .ant-table-cell{
-  background-color: rgb(254, 204, 46);
-
-}
 .party_rows {
-  background-color: rgb(242, 218, 198);
-  opacity: 0.9;
+  background-color: white;
 }
 .td_party{
   text-align: center;
-  
-  border-bottom: 1px solid black;
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: 1px solid black !important ;
 }
-
-
-
-
-
+.party_rows:last-child .td_party{
+  border-bottom: 0;
+}
+.tableParty{
+  border:10px solid rgb(255,179,0);
+  border-top: none;
+  border-bottom: none;
+  table-layout:fixed;
+  padding: 0px 10px !important;
+}
+.tableParty:first-child{
+  border-top:10px solid rgb(255,179,0);
+}
+.tableParty:last-child{
+  border-bottom:10px solid rgb(255,179,0) ;
+}
+.ant-table-thead>tr>th{
+  background-color: rgb(200,200,200)  !important;
+}
 
 
 
@@ -86,7 +89,12 @@ a{
 .seat_map{
   text-align:center;
   margin:3em 0 ;
-  
+}
+.state_party1 tr:nth-child(even){
+  background-color: rgb(232,232,232);
+}
+.state_party2 tr:nth-child(even){
+  background-color: rgb(232,232,232);
 }
 
 @media only screen and (max-width: 600px) {

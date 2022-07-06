@@ -4,71 +4,91 @@ import { Link } from 'react-router-dom';
 const StateParty = () => {
   const props={
       bordered:false,
-      pagination:{ position: ['none'] }
+      pagination:{ position: ['none'] },
+      
   }
+
   const col=[
       {
-        title:"国会议席",
+        dataIndex:["icon"],
+        key:'party',
+        align:'right',
+        width:'5%',
+        render:icon=><img src={icon} alt="icon" style={{width:'25px',height:'25px'}} />
+      },
+      {
+        title:<p style={{fontWeight:'600',margin:'auto'}}>国会议席</p>,
         dataIndex:"country",
         key:"country",
         align:'center',
+        width:'20%',
         render:text=><Link to={convertState(text)}>{text}</Link>
       },
       {
-        title:"国阵",
+        title:<p style={{fontWeight:'600',margin:'auto'}}>国阵</p>,
         dataIndex:"bn",
         key:"bn",
         align:'center',
+        width:'15%',
       },
       {
-        title:"希盟",
+        title:<p style={{fontWeight:'600',margin:'auto'}}>希盟</p>,
         dataIndex:"ph",
         key:"ph",
         align:'center',
+        width:'10%',
       },
       {
-        title:"国盟",
+        title:<p style={{fontWeight:'600',margin:'auto'}}>国盟</p>,
         dataIndex:"pn",
         key:"pn",
         align:'center',
+        width:'10%',
       },
       {
-        title:"MUDA",
+        title:<p style={{fontWeight:'600',margin:'auto'}}>斗士</p>,
         dataIndex:"muda",
         key:"muda",
         align:'center',
+        width:'10%',
       }
 
   ]
 
   const col1=[
     {
-      title:"州会议席",
+      dataIndex:["icon"], 
+      key:'party',
+      align:'right',
+      render:icon=><img src={icon} alt="icon" style={{width:'25px',height:'25px'}} />
+    },
+    {
+      title:<p style={{fontWeight:'600',margin:'auto'}}>州会议席</p>,
       dataIndex:"country",
       key:"country",
       align:'center',
       render:text=><Link to={convertState(text)}>{text}</Link>
     },
     {
-      title:"国阵",
+      title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>国阵</p>,
       dataIndex:"bn",
       key:"bn",
       align:'center',
     },
     {
-      title:"希盟",
+      title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>希盟</p>,
       dataIndex:"ph",
       key:"ph",
       align:'center',
     },
     {
-      title:"国盟",
+      title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>国盟</p>,
       dataIndex:"pn",
       key:"pn",
       align:'center',
     },
     {
-      title:"MUDA",
+      title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>斗士</p>,
       dataIndex:"muda",
       key:"muda",
       align:'center',
@@ -83,6 +103,7 @@ const StateParty = () => {
           "ph":2,
           "pn":3,
           "muda":4,
+          "icon":'https://testelec2022.orientaldaily.com.my/flag/wilayah.png'
       },
       { 
         "id":2,
@@ -91,6 +112,7 @@ const StateParty = () => {
         "ph":1,
         "pn":0,
         "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/selangor.png'
       },
       { 
         "id":3,
@@ -99,6 +121,7 @@ const StateParty = () => {
         "ph":1,
         "pn":0,
         "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/pahang.png'
       },
       {
         "id":4,
@@ -107,6 +130,7 @@ const StateParty = () => {
         "ph":1,
         "pn":0,
         "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/kedah.png'
       },
       {
         "id":5,
@@ -115,6 +139,7 @@ const StateParty = () => {
         "ph":1,
         "pn":0,
         "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/johor.png'
       },
       {
         "id":6,
@@ -123,6 +148,7 @@ const StateParty = () => {
         "ph":1,
         "pn":0,
         "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/kelantan.png'
       },
       {
         "id":7,
@@ -131,6 +157,7 @@ const StateParty = () => {
         "ph":1,
         "pn":0,
         "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/melaka.png'
       },
       {
         "id":8,
@@ -139,6 +166,7 @@ const StateParty = () => {
         "ph":1,
         "pn":0,
         "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/sembilan.png'
       },
       {
         "id":9,
@@ -146,7 +174,8 @@ const StateParty = () => {
         "bn":5,
         "ph":1,
         "pn":0,
-        "muda":4
+        "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/sarawak.png'
       },
       {
         "id":10,
@@ -154,7 +183,8 @@ const StateParty = () => {
         "bn":5,
         "ph":1,
         "pn":0,
-        "muda":4
+        "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/terengganu.png'
       },
       {
         "id":11,
@@ -162,7 +192,8 @@ const StateParty = () => {
         "bn":5,
         "ph":1,
         "pn":0,
-        "muda":4
+        "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/sabah.png'
       },
       {
         "id":12,
@@ -170,7 +201,8 @@ const StateParty = () => {
         "bn":5,
         "ph":1,
         "pn":0,
-        "muda":4
+        "muda":4,
+        "icon":'https://testelec2022.orientaldaily.com.my/flag/perlis.png'
       }
   ]
   const convertState=(state)=>{
