@@ -1,2 +1,15 @@
 export {default as Johor} from './johor';
+export {default as Selangor} from './selangor';
 export {default as Wp} from './wp';
+export {default as Overall} from './overall';
+export {default as Melaka} from './melaka';
+export {default as Pahang} from './pahang';
+export {default as Kedah} from './kedah';
+export {default as Kelantan} from './kelantan';
+export {default as Sembilan} from './negerisembilan';
+export {default as Terengganu} from './terengganu';
+export {default as Perak} from './perak';
+export {default as Penang} from './penang';
+export {default as Perlis} from './perlis';
+export {default as Sarawak} from './sarawak';
+export {default as Sabah} from './sabah';

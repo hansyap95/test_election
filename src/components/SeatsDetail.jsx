@@ -59,7 +59,7 @@ const SeatsDetail = () => {
       case "kelantan":
         state = "吉兰丹";
         return state;
-        
+
       case "melaka":
         state = "马六甲";
         return state;
@@ -151,7 +151,7 @@ const SeatsDetail = () => {
       </div>
       <div className='seat_info'>
           {data.map((cand,index)=>(
-             <Collapse activeKey={seat} onChange={setSeat} key={index}>
+             <Collapse activeKey={seat} onChange={setSeat} key={index} className='collapse_seat' >
                <Panel className='panel_seat' header={cand.seatname +"  "+ cand.ednamec +" "+ cand.edname} key={index} >
                  {HTMLReactParser(cand.electorate+cand.reg_percent+cand.last_result+cand.total_votes+cand.majority+cand.candidate)}
                </Panel>

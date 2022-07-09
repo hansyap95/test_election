@@ -25,12 +25,13 @@ a{
   max-width: 1000px;
   margin: auto;
 }
+
 .button_expand{
   text-align: center;
   margin: 15px 0;
 }
-.panel_seat{
-  font-weight: 500;
+svg{
+  background-color: rgb(250, 240, 230);
 }
 .seat_info{
   margin: auto;
@@ -47,8 +48,20 @@ a{
   background-color: grey;
 }
 
+/* start style collapse data */
+.collapse_seat{
+  background-color: rgb(253,180,108) !important;
+}
+.panel_seat{
+  font-weight: 500;
+}
+.ant-collapse-content{
+  background-color: rgb(247, 236, 198) !important;
+}
 
 
+/* end style collapse data */
+/* start style of table */
 .party_rows {
   background-color: white;
 }
@@ -77,8 +90,7 @@ a{
 .ant-table-thead>tr>th{
   background-color: rgb(200,200,200)  !important;
 }
-
-
+/* end of style table */
 
 .state_party1{
   padding-bottom:2em;

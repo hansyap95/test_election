@@ -5,7 +5,7 @@ const Wp = () => {
   const svgKL=`<svg 
   xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="73.8403 707.584" i:rulerOrigin="0 0" i:pageBounds="0 841.8896 595.2754 0"
   xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-  width="168.57" height="246.021" viewBox="0 0 168.57 246.021" overflow="visible" enable-background="new 0 0 168.57 246.021"
+  width="365" height="355" viewBox="0 0 168.57 246.021" overflow="visible" enable-background="new 0 0 168.57 246.021"
   xml:space="preserve">
  <style type="text/css">
  <![CDATA[

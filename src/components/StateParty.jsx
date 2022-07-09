@@ -10,19 +10,12 @@ const StateParty = () => {
 
   const col=[
       {
-        dataIndex:["icon"],
-        key:'party',
-        align:'right',
-        width:'5%',
-        render:icon=><img src={icon} alt="icon" style={{width:'25px',height:'25px'}} />
-      },
-      {
-        title:<p style={{fontWeight:'600',margin:'auto'}}>国会议席</p>,
+        title:<p style={{textAlign:'center',fontWeight:'600',margin:'auto'}}>国会议席</p>,
         dataIndex:"country",
         key:"country",
-        align:'center',
+        align:'left',
         width:'20%',
-        render:text=><Link to={convertState(text)}>{text}</Link>
+        render:(text,record)=><Link to={convertState(text)}><img src={record.icon} alt="icon" style={{width:'25px',height:'25px',marginRight:'5px'}} />{text}</Link>
       },
       {
         title:<p style={{fontWeight:'600',margin:'auto'}}>国阵</p>,
@@ -57,41 +50,40 @@ const StateParty = () => {
 
   const col1=[
     {
-      dataIndex:["icon"], 
-      key:'party',
-      align:'right',
-      render:icon=><img src={icon} alt="icon" style={{width:'25px',height:'25px'}} />
-    },
-    {
-      title:<p style={{fontWeight:'600',margin:'auto'}}>州会议席</p>,
+      title:<p style={{textAlign:'center',fontWeight:'600',margin:'auto'}}>国会议席</p>,
       dataIndex:"country",
       key:"country",
-      align:'center',
-      render:text=><Link to={convertState(text)}>{text}</Link>
+      align:'left',
+      width:'20%',
+      render:(text,record)=><Link to={convertState(text)}><img src={record.icon} alt="icon" style={{width:'25px',height:'25px',marginRight:'5px'}} />{text}</Link>
     },
     {
-      title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>国阵</p>,
+      title:<p style={{fontWeight:'600',margin:'auto'}}>国阵</p>,
       dataIndex:"bn",
       key:"bn",
       align:'center',
+      width:'15%',
     },
     {
-      title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>希盟</p>,
+      title:<p style={{fontWeight:'600',margin:'auto'}}>希盟</p>,
       dataIndex:"ph",
       key:"ph",
       align:'center',
+      width:'10%',
     },
     {
-      title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>国盟</p>,
+      title:<p style={{fontWeight:'600',margin:'auto'}}>国盟</p>,
       dataIndex:"pn",
       key:"pn",
       align:'center',
+      width:'10%',
     },
     {
-      title:<p style={{fontSize:'16px',fontWeight:'600',margin:'auto'}}>斗士</p>,
+      title:<p style={{fontWeight:'600',margin:'auto'}}>斗士</p>,
       dataIndex:"muda",
       key:"muda",
       align:'center',
+      width:'10%',
     }
 
 ]
