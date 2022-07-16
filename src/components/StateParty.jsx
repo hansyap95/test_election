@@ -200,7 +200,7 @@ const StateParty = () => {
   const convertState=(state)=>{
     switch (state) {
         case "吉隆坡":
-            state='./wp';
+            state='./kl';
             return state;
         case "彭亨":
             state='./pahang';

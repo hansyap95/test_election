@@ -3,7 +3,7 @@ import InlineSVG from 'svg-inline-react';
 
 const Sarawak = (props) => {
   const svgSarawakP=`
-  <svg 
+  <svg style='background-color: rgb(250, 240, 230);'
        xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="109.9165 746.9268" i:rulerOrigin="0 0" i:pageBounds="0 841.8896 1190.5508 0"
        xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
        width="365" height="255" viewBox="0 0 970.782 652.74" overflow="visible" enable-background="new 0 0 970.782 652.74"

@@ -3,7 +3,7 @@ import InlineSVG from 'svg-inline-react';
 
 const Overall = (props) => {
   const svgAll=`
-  <svg 
+  <svg style='background-color: rgb(250, 240, 230);'
        xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="30.168 532.2607" i:rulerOrigin="0 0" i:pageBounds="0 595.2754 841.8896 0"
        xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
        width="365" height="285"  viewBox="0 0 850.912 372.93" overflow="visible" enable-background="new 0 0 850.912 372.93"

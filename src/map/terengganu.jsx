@@ -3,7 +3,7 @@ import InlineSVG from 'svg-inline-react';
 
 const Terengganu = (props) => {
   const svgTerengganuP=`
-  <svg 
+  <svg style='background-color: rgb(250, 240, 230);'
        xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="90.6299 514.5967" i:rulerOrigin="-2 -0.8896" i:pageBounds="2 840.8896 594 0.8896"
        xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
        width="365" height="355" viewBox="0 0 233.066 418.753" overflow="visible" enable-background="new 0 0 233.066 418.753"

@@ -3,7 +3,7 @@ import InlineSVG from 'svg-inline-react';
 
 const Penang = (props) => {
   const svgPenangP=`
-  <svg 
+  <svg style='background-color: rgb(250, 240, 230);'
        xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="16.2363 -0.8965" i:rulerOrigin="117.333 760.1104" i:pageBounds="-117.333 79.8896 474.667 -760.1104"
        xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
        width="365" height="355" viewBox="0 0 393.581 533.489" overflow="visible" enable-background="new 0 0 393.581 533.489"

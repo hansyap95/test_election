@@ -1,6 +1,6 @@
 export {default as Johor} from './johor';
 export {default as Selangor} from './selangor';
-export {default as Wp} from './wp';
+export {default as KL} from './kl';
 export {default as Overall} from './overall';
 export {default as Melaka} from './melaka';
 export {default as Pahang} from './pahang';

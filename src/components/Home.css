@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .article-text{
   margin-left:1em;
 }
@@ -30,9 +32,7 @@ a{
   text-align: center;
   margin: 15px 0;
 }
-svg{
-  background-color: rgb(250, 240, 230);
-}
+
 .seat_info{
   margin: auto;
   padding-bottom: 2em;

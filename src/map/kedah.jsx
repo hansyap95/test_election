@@ -3,7 +3,7 @@ import InlineSVG from 'svg-inline-react';
 
 const Kedah = (props) => {
   const svgKedahP=`
-  <svg 
+  <svg style='background-color: rgb(250, 240, 230);'
        xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="125.2793 727.293" i:rulerOrigin="0 0" i:pageBounds="0 841.8896 595.2754 0"
        xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
        width="365" height="355" viewBox="0 0 370.428 470.894" overflow="visible" enable-background="new 0 0 370.428 470.894"

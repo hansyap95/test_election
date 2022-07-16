@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import HTMLReactParser from 'html-react-parser';
 import './Home.css';
 
-
 const {Panel}=Collapse;
 const SeatsDetail = () => {
   const {state}=useParams();
@@ -26,6 +25,8 @@ const SeatsDetail = () => {
   
   useEffect(()=>{
     fetchData(state,seatCode)
+    loadComponent(state);
+    console.log("loading ...")
   },[state,seatCode])
   
   const expandFunctions=()=>{
@@ -96,7 +97,7 @@ const SeatsDetail = () => {
         state = "彭亨";
         return state;
         
-      case "wp":
+      case "kl":
         state = "吉隆坡联邦直辖区";
         return state;
         
@@ -118,7 +119,7 @@ const SeatsDetail = () => {
     );
     return Component
   }
-
+  //const OtherComponent = React.lazy(() => import('./OtherComponent'));
   const Component=loadComponent(state)
 
   if (!done) return <Loader/>;
@@ -130,7 +131,7 @@ const SeatsDetail = () => {
       </div>
       <div className='button_expand'>
         <Button type="primary" value="p" danger size='large' onClick={parlimentStateFunction} style={{marginRight:'10px'}}>国会议席</Button>
-        <Button type="primary" value="n" danger size='large' onClick={parlimentStateFunction}>州议席</Button>
+        {state!=='johor' && state!=='kl'  && state!=='melaka'  && state!=='sarawak'  && state!=='sabah' &&<Button type="primary" value="n" danger size='large' onClick={parlimentStateFunction}>州议席</Button>}
       </div>
       <div className='chart'>
         <Chart />
@@ -142,7 +143,8 @@ const SeatsDetail = () => {
         <h1 >{convertName(state)+"-地图"}</h1>
         <div className='map'>
           <Suspense fallback={<Loader/>}>
-            <Component code={seatCode}/>
+           <Component code={seatCode} />
+ 
           </Suspense>
         </div>
       </div>

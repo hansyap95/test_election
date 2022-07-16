@@ -1,9 +1,13 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import InlineSVG from 'svg-inline-react';
 
-const johor = (props) => {
+
+
+
+const Johor = (props) => {
+	
   const svgJohorN=`<svg xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="38.3965 792.457" i:rulerOrigin="0 0" i:pageBounds="0 841.8896 595.2754 0" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" 
-  width="85%" height="70%" viewBox="0 0 418.662 539.387" overflow="visible" enable-background="new 0 0 418.662 539.387" xml:space="preserve">
+  width="85%" height="70%" viewBox="0 0 418.662 539.387" overflow="visible" enable-background="new 0 0 418.662 539.387" xml:space="preserve" >
   <switch>
 	  <g i:extraneous="self">
 		  <g id="Layer_1" i:layer="yes" i:dimmedPercent="50" i:rgbTrio="#4F008000FFFF">
@@ -166,7 +170,7 @@ const johor = (props) => {
   </switch>
 </svg>`
 const svgJohorP=`
-<svg 
+<svg style='background-color: rgb(250, 240, 230);'
 	 xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="65.8198 793.4858" i:rulerOrigin="0 0" i:pageBounds="0 841.8896 595.2754 0"
 	 xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
 	 width="368" height="355" viewBox="0 0 391.464 357.971" overflow="visible" enable-background="new 0 0 391.464 357.971"
@@ -1739,11 +1743,12 @@ const callMap=()=>{
     xmlhttp.open("GET", "https://testelec2022.orientaldaily.com.my/getInfo.php", true);
     xmlhttp.send();
 }   
-   setInterval(function() {
-       callMap();
-       clearData();
-   }, 20000);
-
+   useEffect(()=>{
+	setInterval(()=>{
+		callMap();
+		clearData();
+	}, 20000);
+   })
   return (
 	<>
     {callMap()}
@@ -1752,6 +1757,6 @@ const callMap=()=>{
   )
 }
 
-export default johor
+export default Johor
 
 	
